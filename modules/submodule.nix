@@ -38,17 +38,7 @@ with lib; {
       default = { };
     };
 
-    args = mkOption {
-      description = ''
-        User-defined arguments for the submodule.
-
-        Particular submodule definitions should define their own options beneath
-        this key (`submodule.args`); submodule _instances_ can provide values
-        for the options at `submodules.instances.<name>.args`.
-      '';
-      type = types.submodule { };
-      visible = "shallow";
-    };
+    args._empty = mkOption { };
   };
 
   config._module.args.args = config.submodule.args;
